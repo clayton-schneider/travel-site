@@ -1140,8 +1140,10 @@ a {
             width: 20px;
             height: 3px;
             background-color: white;
-            -webkit-transition: opacity .3s ease-out;
-            transition: opacity .3s ease-out;
+            -webkit-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+            -webkit-transform-origin: 0 50%;
+                    transform-origin: 0 50%;
         }
 
 .site-header__menu-icon::after {
@@ -1174,6 +1176,8 @@ a {
         }
 
 .site-header__menu-icon--close-x .site-header__menu-icon__middle {
+            -webkit-transform: scaleX(0);
+                    transform: scaleX(0);
             opacity: 0;
         }
 
@@ -1254,4 +1258,18 @@ a {
             font-size: 1rem;
             background-color: transparent
     }
+    }
+
+.reveal-item {
+    opacity: 0;
+    -webkit-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+}
+
+.reveal-item--is-visible {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
