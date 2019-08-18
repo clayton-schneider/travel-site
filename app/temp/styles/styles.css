@@ -1046,8 +1046,13 @@ a {
 @media (min-width: 800px) {
 
 .site-header {
+        position: fixed;
         background-color: rgba(47,85,114, 0.3)
 }
+
+        .site-header--dark {
+            background-color: rgba(23, 51, 72, 85); 
+        }
     }
 
 @media (min-width: 800px) {
@@ -1060,14 +1065,18 @@ a {
 
 .site-header__logo {
         position: absolute;
-        background-color: #2f5572;
-        padding: 25px 36px;
         top: 0;
         left: 50%;
         -webkit-transform: translateX(-50%) scale(.8);
                 transform: translateX(-50%) scale(.8);
+        -webkit-transition: -webkit-transform .3s ease-out;
+        transition: -webkit-transform .3s ease-out;
+        transition: transform .3s ease-out;
+        transition: transform .3s ease-out, -webkit-transform .3s ease-out;
         -webkit-transform-origin: 50% 0%;
                 transform-origin: 50% 0%;
+        background-color: #2f5572;
+        padding: 25px 36px;
     }
 
 @media (min-width: 800px) {
@@ -1077,6 +1086,11 @@ a {
             -webkit-transform: translateX(0);
                     transform: translateX(0)
     }
+
+            .site-header--dark .site-header__logo {
+                -webkit-transform: scale(.54);
+                        transform: scale(.54);
+            }
     }
 
 .site-header__menu-content {
@@ -1225,6 +1239,7 @@ a {
 @media (min-width: 800px) {
 
 .primary-nav li {
+            padding-right: 20px;
             float: left;
             display: block
     }
@@ -1258,6 +1273,10 @@ a {
             font-size: 1rem;
             background-color: transparent
     }
+
+            .primary-nav a.is-current-link {
+                color: #fabb69;
+            }
     }
 
 .reveal-item {
